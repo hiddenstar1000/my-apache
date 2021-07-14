@@ -1,0 +1,17 @@
+version: "3.8"
+
+# Define services
+services:
+  bsb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: onxidtechnologies/apache
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+    restart: always
+    ports:
+      - "81:80"
+    volumes:
+      - /Library/WebServer/Documents:/var/www/html
