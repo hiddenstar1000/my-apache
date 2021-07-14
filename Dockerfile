@@ -20,6 +20,8 @@ RUN apt-get install -y \
 
 RUN docker-php-ext-install bcmath gd mbstring mysqli pdo pdo_mysql soap zip
 
+COPY ./sites.conf /etc/apache2/sites-available/sites.conf
+
 RUN a2enmod rewrite
 
 EXPOSE 80

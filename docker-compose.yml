@@ -12,6 +12,6 @@ services:
       - APACHE_RUN_GROUP=www-data
     restart: always
     ports:
-      - "80:80"
+      - "81:80"
     volumes:
       - /Library/WebServer/Documents:/var/www/html
