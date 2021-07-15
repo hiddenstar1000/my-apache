@@ -1,6 +1,5 @@
 FROM php:7.4-apache
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-
+#COPY ./sites-available/sites.conf /etc/apache2/sites-available/sites.conf
 RUN apt-get update
 RUN apt-get install -y \
       curl \
@@ -19,8 +18,6 @@ RUN apt-get install -y \
       libzip-dev
 
 RUN docker-php-ext-install bcmath gd mbstring mysqli pdo pdo_mysql soap zip
-
-COPY ./sites.conf /etc/apache2/sites-available/sites.conf
 
 RUN a2enmod rewrite
 
