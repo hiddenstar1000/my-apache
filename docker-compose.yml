@@ -15,4 +15,3 @@ services:
       - "81:80"
     volumes:
       - /Library/WebServer/Documents:/var/www/html
-      - ./sites-available:/etc/apache2/sites-available

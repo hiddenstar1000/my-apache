@@ -1,5 +1,5 @@
 FROM php:7.4-apache
-#COPY ./sites-available/sites.conf /etc/apache2/sites-available/sites.conf
+COPY ./sites-available/sites.conf /etc/apache2/sites-available/000-default.conf
 RUN apt-get update
 RUN apt-get install -y \
       curl \
